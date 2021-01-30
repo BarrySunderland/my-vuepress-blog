@@ -22,12 +22,16 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    logo: '969.png',
+    logo: '/img/969.png',
     repo: '',
     editLinks: false,
     docsDir: '',
     editLinkText: '',
-    navbar: [
+    nav: [
+      {
+        text: 'Home',
+        link: '/'
+      },
       {
         text: 'Guide',
         link: '/guide/',
@@ -37,8 +41,8 @@ module.exports = {
         link: '/about/'
       },
       {
-        text: 'Config',
-        link: '/config/'
+        text: 'Blog',
+        link: '/blog/'
       },
     ],
     // sidebar: {

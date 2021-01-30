@@ -49,3 +49,6 @@ def main():
 <ClientOnly>
   <demo-component/>
 </ClientOnly>
+
+
+<embed type="text/html" width="1100" height="500" src="periodic_table.html"></embed>
