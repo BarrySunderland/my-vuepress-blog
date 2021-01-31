@@ -1,11 +1,30 @@
+---
+title: 'Embedding Interactive Bokeh Plots in Static Sites'
+lang: 'en-uk'
+tags:
+  - visualisation
+  - jupyter notebooks
+  - python
+  - bokeh
+---
+
+# Embedding Interactive Bokeh Plots in Static Sites
+
+Bokeh is a great tool in the python data science that gives the capability to create modern interactive plots and dashboards. All of this without the need to write any javascript and often from the comfort of a jupyter notebook.  
+
+But how can we share these plots with colleagues? 
+
+
+
+## Static Bokeh
+
+The [bokeh gallery](https://docs.bokeh.org/en/latest/docs/gallery/periodic.html) below is an example plot from Bokeh
+
 ```python
 from bokeh.io import output_file, show, output_notebook
 from bokeh.plotting import figure
 from bokeh.sampledata.periodic_table import elements
 from bokeh.transform import dodge, factor_cmap
-
-
-output_notebook()
 
 periods = ["I", "II", "III", "IV", "V", "VI", "VII"]
 groups = [str(x) for x in range(1, 19)]
@@ -75,5 +94,21 @@ show(p)
 ```
 
 
-<embed type="text/html" src="periodic_table.html"></embed>
+```md
+<embed 
+       type="text/html" 
+       src="/bokeh/periodic_table.html"
+       width="1100"
+       height="600"
+       >
+</embed>
+```
+
+<embed 
+       type="text/html" 
+       src="/bokeh/periodic_table.html"
+       width="1100"
+       height="600"
+       >
+</embed>
 
