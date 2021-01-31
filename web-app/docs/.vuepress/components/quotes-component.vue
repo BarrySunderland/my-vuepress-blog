@@ -1,13 +1,14 @@
 <template>
 <div>  
     <hr/>
+    <p class="quotes-title">Curated Quotes</p>
     <transition name="slide-fade" mode="out-in">
         <div class="pointer"
             @click="incrementQuoteIndex"
             title="next quote"
             :key="quoteIndex"
             >
-            <p ><i>{{ quotes[quoteIndex].text }}</i>
+            <p class="quotes-text"><i>{{ quotes[quoteIndex].text }}</i>
             <br/>- {{quotes[quoteIndex].source}} </p>
 
         </div>
@@ -37,6 +38,10 @@ export default {
                     text:"Think before you speak, read before you think",
                     source:"F.Lebowitz"
                 },
+                {
+                    text:"If you're gonna' be dumb, you gotta be tough",
+                    source:"R.Wade"
+                },
             ],
         }
     },
@@ -56,6 +61,15 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.quotes-title{
+    margin:0px ;
+    font-weight: 600;
+}
+.quotes-text{
+    margin-top: 8px;
+}
+
 .pointer {
   cursor: pointer;
 }
