@@ -1,6 +1,7 @@
 <template>
   <div>
     <hr>
+    <h3>Blog Posts</h3>
     <p v-for="blogLink in blogLinks" :key="blogLink.id">
       <a :href="blogLink.path">{{ blogLink.title }}</a>
     </p>
