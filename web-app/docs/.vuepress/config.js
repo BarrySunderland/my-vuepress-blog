@@ -2,10 +2,10 @@ const { description } = require('../../package')
 
 module.exports = {
 
-  title: 'Barry',
+  title: 'Data Science Dev',
   description: description,
 
-  // /**
+  // **
   //  * Extra tags to be injected to the page HTML `<head>`
   //  *
   //  * ref：https://v1.vuepress.vuejs.org/config/#head
@@ -22,7 +22,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    logo: '/img/969.png',
+    logo: '/img/matterhorn_icon.jpg',
     repo: '',
     editLinks: false,
     docsDir: '',
@@ -32,31 +32,20 @@ module.exports = {
         text: 'Home',
         link: '/'
       },
-      {
-        text: 'Guide',
-        link: '/guide/',
-      },
       { 
         text: 'About',
         link: '/about/'
+      },
+      {
+        text: 'Projects',
+        link: '/projects/',
       },
       {
         text: 'Blog',
         link: '/blog/'
       },
     ],
-    // sidebar: {
-    //   '/guide/': [
-    //     {
-    //       title: 'Guide',
-    //       collapsable: false,
-    //       children: [
-    //         '',
-    //         'using-vue',
-    //       ]
-    //     }
-    //   ],
-    // }
+    sidebar: 'auto'
   },
 
   /**

@@ -14,9 +14,9 @@ Bokeh is a great tool in the python data science that gives the capability to cr
 
 But how can we share these plots with colleagues? 
 
-
-
 ## Static Bokeh
+
+Bokeh has the ability to move the 
 
 The [bokeh gallery](https://docs.bokeh.org/en/latest/docs/gallery/periodic.html) below is an example plot from Bokeh
 
