@@ -1,7 +1,7 @@
 {
-  "name": "app",
+  "name": "barrysunderland.com",
   "version": "0.0.1",
-  "description": "personal website",
+  "description": "A personal website made with Vuepress",
   "main": "index.js",
   "authors": {
     "name": "Barry",
