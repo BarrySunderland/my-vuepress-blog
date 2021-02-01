@@ -98,20 +98,7 @@ p.hover.renderers = [r] # only hover element boxes
 show(p)
 ```
 
-
-
-
-
-
-
-
-<div class="bk-root" id="a2754783-4528-4c06-96b2-80c3a23e5217" data-root-id="5025"></div>
-
-
-
-
-
-We can then copy this html file to a directory that our front end can find (usually somewhere inside the `/public`  folder for static websites). And inside our webpage, add an embed element with a path to the file.
+We can then copy this html file to a directory that our front end can find (usually somewhere inside the `/public`  folder for static websites). And inside our webpage, add an embed element with a path to the file. 
 
 for example:
 
@@ -125,7 +112,7 @@ for example:
 </embed>
 ```
 
-The width and height need to be defined as the element will not autosize for the content.
+The width and height need to be defined as the element will not autosize for the content. But unlike in the markdown conversion of jupyter notebook which won't display a plot, we should now be able to see our bokeh plot.
 
 <embed 
        type="text/html" 
@@ -135,7 +122,6 @@ The width and height need to be defined as the element will not autosize for the
        >
 </embed>
 
-
 ## Static Bokeh - as an API response
 
 Another use case is if you have an API or a Flask website and want to return a Bokeh plot as part of a response. This gives the option of incorporating the latest data or having some filtering, basically allowing you to create the bokeh plot on the fly.
@@ -144,7 +130,7 @@ The function to use in this case is ```file_html()``` from bokeh.embed . This ac
 
 The other required argument is resources which specify the css and javascript files to use for the plot. The convenient way to include this is by the CDN object which lists all of the latest links to Bokeh's content delivery network.
 
-So assuming we have the code above to generate the plot `p` ...
+So assuming we have the code above to generate the plot `p` we can just switch out the elements below.
 
 
 ```python
@@ -156,11 +142,8 @@ from bokeh.embed import file_html
 ```python
 title = "periodic table"
 p_html_str = file_html(p, CDN, title)
-```
 
-
-```python
-# As we can see have the text for a standalone html file
+# As we can see, we have all the text for a standalone html file
 print(p_html_str[:350])
 ```
 
