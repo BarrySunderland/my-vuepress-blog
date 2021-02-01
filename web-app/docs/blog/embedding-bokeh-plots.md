@@ -1,6 +1,6 @@
 ---
-title: 'Embedding Interactive Bokeh Plots in Static Sites'
-lang: 'en-uk'
+title: 'Embedding Interactive Bokeh Plots in Static Sites'  
+lang: 'en-uk'  
 tags:
   - visualisation
   - jupyter notebooks
@@ -10,21 +10,26 @@ tags:
 
 # Embedding Interactive Bokeh Plots in Static Sites
 
-Bokeh is a great tool in the python data science that gives the capability to create modern interactive plots and dashboards. All of this without the need to write any javascript and often from the comfort of a jupyter notebook.  
+Bokeh is a great tool in the python data science stack that gives you the capability to create modern interactive plots and dashboards, but without the need to write any javascript. Even from the comfort of a jupyter notebook.  
 
-But how can we share these plots with colleagues? 
+But how do we get these plots out of our notebooks and into the hands of users and colleagues?
 
-## Static Bokeh
+If your plot is static like the majority of bokeh plots (i.e. it doesn't need to make calls to bokeh server for updates) then Bokeh has some built in functions for generating stand alone html & html files that make this very easy. There are two main options depending on your use
 
-Bokeh has the ability to move the 
+## Static Bokeh - as a static file
 
-The [bokeh gallery](https://docs.bokeh.org/en/latest/docs/gallery/periodic.html) below is an example plot from Bokeh
+For the first use case we'll use the excellent example plot of the periodic table from the [bokeh gallery](https://docs.bokeh.org/en/latest/docs/gallery/periodic.html) and embed this as a static file in our site. All we have to have to do is run the provided script which saves all of the elements needed to create the plot in a browser (data, links to css & javscript etc.) to a file called `"periodic.html"`  in the current directory.
+
+
+
 
 ```python
-from bokeh.io import output_file, show, output_notebook
+from bokeh.io import output_file, show
 from bokeh.plotting import figure
 from bokeh.sampledata.periodic_table import elements
 from bokeh.transform import dodge, factor_cmap
+
+output_file("periodic.html")
 
 periods = ["I", "II", "III", "IV", "V", "VI", "VII"]
 groups = [str(x) for x in range(1, 19)]
@@ -94,21 +99,94 @@ show(p)
 ```
 
 
-```md
+
+
+
+
+
+
+<div class="bk-root" id="a2754783-4528-4c06-96b2-80c3a23e5217" data-root-id="5025"></div>
+
+
+
+
+
+We can then copy this html file to a directory that our front end can find (usually somewhere inside the `/public`  folder for static websites). And inside our webpage, add an embed element with a path to the file.
+
+for example:
+
+```md 
 <embed 
        type="text/html" 
-       src="/bokeh/periodic_table.html"
+       src="/bokeh/periodic.html"
        width="1100"
        height="600"
        >
 </embed>
 ```
 
+The width and height need to be defined as the element will not autosize for the content.
+
 <embed 
        type="text/html" 
-       src="/bokeh/periodic_table.html"
+       src="/bokeh/periodic.html"
        width="1100"
        height="600"
        >
 </embed>
+
+
+## Static Bokeh - as an API response
+
+Another use case is if you have an API or a Flask website and want to return a Bokeh plot as part of a response. This gives the option of incorporating the latest data or having some filtering, basically allowing you to create the bokeh plot on the fly.
+
+The function to use in this case is ```file_html()``` from bokeh.embed . This accepts a bokeh plot as an argument and returns all the html needed to make that plot as a string. More details in the [Bokeh docs](https://docs.bokeh.org/en/latest/docs/reference/embed.html#bokeh.embed.file_html).
+
+The other required argument is resources which specify the css and javascript files to use for the plot. The convenient way to include this is by the CDN object which lists all of the latest links to Bokeh's content delivery network.
+
+So assuming we have the code above to generate the plot `p` ...
+
+
+```python
+from bokeh.resources import CDN
+from bokeh.embed import file_html
+```
+
+
+```python
+title = "periodic table"
+p_html_str = file_html(p, CDN, title)
+```
+
+
+```python
+# As we can see have the text for a standalone html file
+print(p_html_str[:350])
+```
+
+    
+    
+    
+    
+    <!DOCTYPE html>
+    <html lang="en">
+      
+      <head>
+        
+          <meta charset="utf-8">
+          <title>periodic table</title>
+          
+          
+            
+              
+            
+            
+              
+            <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.1.1.min.js" integrity="sha384-kLr4fYcqcSpbuI95brIH3vnnYCquzzSxHPU6XGQCIkQRGJwhg0
+
+
+Then you just have to include this string in the response object.  
+Getting the data out of the database and into the hands of the people who want it. 
+
+Hope this helps you build something cool.
 
