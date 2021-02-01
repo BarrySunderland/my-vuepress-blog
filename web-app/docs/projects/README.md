@@ -41,8 +41,7 @@ This 1.5 day challenge was part of the Data Science Bootcamp at Propulsion where
 
 Given the limited time, our strategy was to create an interactive data exploration tool to show exsting and competitors stores, as well as points of interest (public transport, schools etc.). Based on an assumed rubric that you wouldn't walk more than 300m to a small store in Zürich, we tried to identify some interesting locations.
 
-__topics__: 
-EDA, data visualization, Bokeh  
+__topics__: EDA, data visualization, Bokeh  
 __date__: Oct/2020
 
 <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6577598282632052736?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
