@@ -1,7 +1,7 @@
 <template>
 <div>  
     <hr/>
-    <p class="quotes-title">Curated Quotes</p>
+    <p class="quotes-title">Favourite Quotes</p>
     <transition name="slide-fade" mode="out-in">
         <div class="pointer"
             @click="incrementQuoteIndex"
