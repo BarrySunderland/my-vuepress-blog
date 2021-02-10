@@ -10,8 +10,8 @@ actionLink: /guide/
 
 I'm interested in making useful things for people. This first led to studying mechanical engineering and working on projects making things. A few years ago I got hooked on making useful digital things for people.
 
-![Barry at work doing Data Science things](./img/5494.png )
-<p><i>Me at work, researching the latest methods in Data Science</i></p>
+[![just doing Data Science things](./img/5494.png )](https://www.graphikportal.org/document/gpo00216471)
+<p><i>At work, using the latest methods in Data Science <br/>(image: Graphische Sammlung ETH / D 7301 / Public Domain Mark 1.0)</i></p>
 
 #### Programming
 Admittedly I didn't find my 1st year Matlab classes simulating the national lottery particularly inspiring. But after starting working in industry, and seeing the daily barrage of repetitive excel based tasks, I quickly took an interest in VBA and figuring out what workload I could expedite and automate.  
