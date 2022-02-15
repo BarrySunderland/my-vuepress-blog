@@ -2,7 +2,7 @@
 home: true
 heroImage: "/img/lepi.gif"
 title: 'Barry'
-tagline: Welcome to the musings of a Data Scientist who likes to do Full Stack Dev
+tagline: The musings of a former mechanical engineer now working on developing data and ML centric apps
 features: ''
 footer: Made with ❤️ by Open Source Software
 ---

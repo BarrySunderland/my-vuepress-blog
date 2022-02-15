@@ -2,7 +2,7 @@ const { description } = require('../../package')
 
 module.exports = {
 
-  title: 'Data Science Dev',
+  title: '',
   description: description,
 
   // **
