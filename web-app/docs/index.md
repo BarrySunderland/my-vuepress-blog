@@ -2,7 +2,7 @@
 home: true
 heroImage: "/img/lepi.gif"
 title: 'Barry'
-tagline: The musings of a former mechanical engineer now working on developing data and ML centric apps
+tagline: Interesting, tricky, or just fun. Insights and code that just might come in handy again one day...
 features: ''
 footer: Made with ❤️ by Open Source Software
 ---

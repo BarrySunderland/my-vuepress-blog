@@ -2,7 +2,7 @@ const { description } = require('../../package')
 
 module.exports = {
 
-  title: '',
+  title: 'Dogged Data Developments',
   description: description,
 
   // **
@@ -22,7 +22,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    logo: '/img/matterhorn_icon.jpg',
+    logo: 'favicon.ico',
     repo: '',
     editLinks: false,
     docsDir: '',
